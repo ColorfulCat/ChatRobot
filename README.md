@@ -1,5 +1,7 @@
 ### 用Kotlin语言写的一个聊天机器人的Demo
 
+- APK安装包下载试用 [http://fir.im/ChatRobot ](http://fir.im/ChatRobot)
+
 ##### 注意事项:
 ######本项目是用Android Studio开发，使用前请确保Android Studio安装Kotlin的插件，如下
 
