@@ -33,8 +33,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     //图灵机器人API  获取KEY请访问 : http://www.tuling123.com/
     private val BASE_URL: String = "http://www.tuling123.com/openapi/api"
-    private val API_KEY: String = "4f3664efdfacd7f7968f72d2dd594113"
-    private var USER_ID: String = "default"
+    private val API_KEY: String = "4f3664efdfacd7f7968f72d2dd594113" //请使用自己申请的图灵机器人的KEY哦
+    private var USER_ID: String = "default" //用户唯一ID
 
     private var messages = ArrayList<Msg>()
 
@@ -49,6 +49,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     fun initData() {
+        //获取用户唯一ID
         val TelephonyMgr: TelephonyManager = getSystemService(TELEPHONY_SERVICE) as TelephonyManager;
         USER_ID = TelephonyMgr.getDeviceId();
         Log.e(javaClass.simpleName, "USER_ID = $USER_ID")
@@ -58,7 +59,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val toolbar = findViewById(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
 
-        //侧滑菜单
+        //侧滑菜单,目前没用到,后面再弄
         val drawer = findViewById(R.id.drawer_layout) as DrawerLayout
         val toggle = ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
@@ -69,7 +70,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         navigationView.setNavigationItemSelectedListener(this)
 
         //发送按钮
-        sendButton.setOnClickListener {
+        sendButton.onClick {
             sendMessage(inputEditText.text.toString())
         }
 
@@ -89,7 +90,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
      */
     fun sendMessage(content: String) {
         if (TextUtils.isEmpty(content)) {
-            Toast.makeText(this, "请输入您要说的话", Toast.LENGTH_SHORT).show()
+            toast("请输入您要说的话")
             return;
         }
         var message: Msg = Msg(content, "", 0, true)

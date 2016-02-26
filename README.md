@@ -15,8 +15,12 @@
 
 ##### 参考资料：
 
+[JetBrains/kotlin](https://github.com/JetBrains/kotlin)
+
+[Kotlin/anko](https://github.com/Kotlin/anko)
+
 [《Kotlin for android developers》中文版翻译](https://wangjiegulu.gitbooks.io/kotlin-for-android-developers-zh/content/index.html)
 
-本项目仅用于学习Kotlin入门
+本项目仅用于学习Kotlin入门, 代码比较简单直接，主要是熟悉一下用Kotlin开发的一些常用代码的使用,不定期更新。希望请Star一下 ^ ^。
 
 聊天机器人用的是[图灵机器人API接口](http://www.tuling123.com/)
